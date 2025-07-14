@@ -2,7 +2,7 @@
 
 ## User Profile Header
 
-```javascript
+``` javascript
 <div className="p-6 border-b border-gray-700">
   <div className="flex items-center space-x-3">
     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
@@ -18,7 +18,7 @@
 
 ## User List
 
-```javascript
+``` javascript
 <div className="flex-1 overflow-y-auto">
   <div className="p-4">
     <h3 className="text-sm font-medium text-gray-400 mb-3">CONTACTS</h3>
@@ -54,7 +54,7 @@
 
 ## Action Buttons
 
-```javascript
+``` javascript
 <div className="p-4 border-t border-gray-700">
           <div className="space-y-2">
             <button className="w-full text-left p-3 rounded-lg hover:bg-gray-700 transition-colors flex items-center space-x-3">
@@ -77,7 +77,7 @@
 
 ## Main Chat Area
 
-```javascript
+``` javascript
 <div className="p-6 border-b border-gray-700 bg-gray-800">
   <div className="flex items-center justify-between">
     <div className="flex items-center space-x-3">
@@ -127,7 +127,7 @@
 
 ## Messages Area
 
-```javascript
+``` javascript
 <div className="flex-1 overflow-y-auto p-6 space-y-4">
   {messages.map((msg) => (
     <div
@@ -157,7 +157,7 @@
 
 ## Message Input
 
-```js
+``` js
 <div className="p-6 border-t border-gray-700 bg-gray-800">
   <div className="flex items-end space-x-3">
     <button className="p-3 hover:bg-gray-700 rounded-full transition-colors">
@@ -225,7 +225,7 @@
 
 ## Container
 
-```js
+``` js
 <div className="flex h-screen bg-gray-900 text-white">
   {/* Sidebar */}
   <div className="w-80 bg-gray-800 border-r border-gray-700 flex flex-col"></div>
@@ -234,7 +234,7 @@
 
 ## Css For index.css
 
-```css
+``` css
 * {
   box-sizing: border-box;
 }
@@ -282,7 +282,7 @@ textarea {
 
 ## App function Code
 
-```js
+``` js
 const [selectedUser, setSelectedUser] = useState('Username')
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState([
@@ -324,5 +324,3 @@ const [selectedUser, setSelectedUser] = useState('Username')
   }
 
 ```
-#   R e a c t - C h a t - A p p  
- 
