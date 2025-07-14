@@ -1,8 +1,14 @@
 import React from 'react'
+import Container from './components/container/Container'
+import UserProfileHeader from './components/UserProfileHeader'
 
 function App() {
   return (
-    <div>App</div>
+    <>
+    <Container>
+      <UserProfileHeader />
+    </Container>
+    </>
   )
 }
 
