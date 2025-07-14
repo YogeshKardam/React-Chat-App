@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import { set, useForm } from 'react-hook-form'
 import { useNavigate, Link } from 'react-router-dom'
 import authService from '../appwrite/auth'
+import { useDispatch } from 'react-redux'
+import { login as authLogin } from '../store/authSlice'
 
 
 function Signup() {
     const { register, handleSubmit } = useForm()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [error, setError] = useState("")
 
     const create = async (data) => {
@@ -16,6 +19,7 @@ function Signup() {
             if (userData) {
                 const userData = await authService.getCurrentUser()
                 if (userData) {
+                    dispatch(authLogin(userData));
                     navigate('/')
                 }
             }

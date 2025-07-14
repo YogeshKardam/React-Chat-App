@@ -3,21 +3,27 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 import authService from "../appwrite/auth";
+import { useDispatch } from "react-redux";
+import { login as authLogin } from "../store/authSlice";
 
 
 
 function Login() {
     const { register, handleSubmit} = useForm();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [error, setError] = useState("");
 
     const login = async (data) => {
         setError("")
         try {
             const session = await authService.login(data)
+            console.log("userData", session)
             if (session){
                 const userData = await authService.getCurrentUser()
                 if (userData) {
+                    dispatch(authLogin(userData));
+                    
                     navigate('/')
                 }   
             }
@@ -32,7 +38,7 @@ function Login() {
     <div class="bg-[#0f172a] flex items-center justify-center min-h-screen text-white">
       <div class="bg-[#1e293b] p-8 rounded-2xl shadow-xl w-full max-w-sm">
         <h2 class="text-2xl font-bold mb-6 text-center text-white">
-          Login to Your Account
+          Login to Your Account 
         </h2>
         {error && <p className='text-red-600 mt-8 text-center'></p>}
         <form onSubmit={handleSubmit(login)} class="space-y-5">
